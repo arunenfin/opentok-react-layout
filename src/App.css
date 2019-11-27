@@ -20,3 +20,34 @@
 .App-link {
   color: #09d3ac;
 }
+
+/* opentok layout css */
+.layout-container, .publisher-container {
+  height: 100%;
+}
+
+.layout-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #DDD;
+}
+
+.layout-container > div {
+  background-color: #000;
+  display: inline-block;
+  border: 1px solid #fff;
+
+  transition-property: all;
+  transition-duration: 0.5s;
+  
+  width: 0;
+  height: 0;
+  opacity: 0;
+}
+
+.layout-container > div.ot-layout {
+  opacity: 1;
+}
