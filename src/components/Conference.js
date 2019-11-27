@@ -92,14 +92,12 @@ class Conference extends Component {
     this.session.on('streamCreated', this.handleStreamCreated);
     this.session.on('streamDestroyed', this.handleStreamDestroyed);
     window.addEventListener('resize', this.handleWindowResize);
-    this.layoutContainer.addEventListener('dblclick', this.handleDblClick);
   }
   
   componentWillUnmount() {
     this.session.off('streamCreated', this.handleStreamCreated);
     this.session.off('streamDestroyed', this.handleStreamDestroyed);
     window.removeEventListener('resize', this.handleWindowResize);
-    this.layoutContainer.removeEventListener('dblclick', this.handleDblClick);
 
     this.layoutContainer = null;
     this.layout = null;
@@ -109,7 +107,7 @@ class Conference extends Component {
 
   render() {
     return (
-      <div id="layoutContainer" className="layout-container">
+      <div id="layoutContainer" className="layout-container" onDoubleClick={this.handleDblClick}>
         <div id="publisherContainer" className="publisher-container"></div>
       </div>
     )
