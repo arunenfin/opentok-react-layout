@@ -71,10 +71,14 @@ class Conference extends Component {
     const layoutDivs = document.querySelectorAll(".ot-layout");
     const el = e.target.closest(".ot-layout");
 
-    for (let i = 0; i < layoutDivs.length; i++) {
-      layoutDivs[i].classList.remove('OT_big');
+    if(el.classList.contains('OT_big')) { 
+      el.classList.remove('OT_big'); 
+    } else {
+      for (let i = 0; i < layoutDivs.length; i++) {
+        layoutDivs[i].classList.remove('OT_big');
+      }
+      el.classList.add('OT_big'); 
     }
-    el.classList.add('OT_big');
 
     this.layout();
   }
