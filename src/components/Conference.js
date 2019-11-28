@@ -99,6 +99,7 @@ class Conference extends Component {
     this.session.off('streamDestroyed', this.handleStreamDestroyed);
     window.removeEventListener('resize', this.handleWindowResize);
 
+    this.session.disconnect();
     this.layoutContainer = null;
     this.layout = null;
     this.session = null;
